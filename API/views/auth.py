@@ -4,7 +4,24 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
-from Compte.models import Utilisateur
+
+
+class GetAllStatusView(APIView):
+    """
+
+    Args:
+        APIView (_type_): CETTE CLASSE DE VUE PERMET DE LISTER TOUTES LES STATUS DES AGENTS DE L'APPLICATION
+    """
+    def get(self, request):
+        return Response({
+            'statut_agent_reception': 'Agent reception',
+            'statut_agent_regisseur':'Agent regisseur',
+            'statut_agent_charge_de_diplome':'Agent chargé de diplôme',
+            'statut_agent_de_verification':'Agent de vérification',
+            'statut_agent_de_production':'Agent de production',
+            'statut_agent_de_distribution':'Agent de distribution'
+        })
+    
 
 class LoginView(APIView):
     def post(self, request):

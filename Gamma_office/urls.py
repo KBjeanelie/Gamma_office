@@ -18,12 +18,11 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from django.conf.urls.static import static
 from django.conf import settings
-
 from API.views.auth import LoginView, LogoutView, PasswordChangeView, PasswordResetView
 from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
     TokenRefreshView,
 )
+
 urlpatterns = [
     path('Gamma/Office/Admin/', admin.site.urls),
     path('Gamma/Office/Compte/', include('Compte.urls')),
