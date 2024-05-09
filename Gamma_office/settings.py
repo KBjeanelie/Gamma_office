@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'Paiements.apps.PaiementsConfig',
     'Registres.apps.RegistresConfig',
     
+    #Apps for API
+    'API',
+    
     #Application externe
     'corsheaders',
     'rest_framework',
